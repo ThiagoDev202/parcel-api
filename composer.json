@@ -1,0 +1,16 @@
+{
+    "name": "thiago/parcel-api",
+    "description": "API RESTful para geração de parcelas de carnê",
+    "autoload": {
+        "psr-4": {
+            "Thiago\\ParcelApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ThiagoDev202",
+            "email": "thiago2002.fernandes@hotmail.com"
+        }
+    ],
+    "require": {}
+}
