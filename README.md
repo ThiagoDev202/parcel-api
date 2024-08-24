@@ -71,6 +71,12 @@ A Parcel API é uma aplicação em PHP para gerar e apresentar parcelas de um ca
    php -S localhost:8000 -t public
 
 
+# Melhorias
+
+1. MariaDB. Utilizar um banco de dados MySQL.
+2. Interface visual - Frontend. Utilizar React com Typescript.
+
+
 ### Deploy
 
 Para o deploy da aplicação, siga os seguintes passos:
