@@ -39,6 +39,29 @@ class CarnesController
 
     public function recuperarParcelas()
     {
-        // dev
+        // Obtém o ID da requisição
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if (!isset($data['id']) || !is_int($data['id'])) {
+            http_response_code(400);
+            echo json_encode(['error' => 'Campo "id" é obrigatório e deve ser um número inteiro']);
+            return;
+        }
+
+        $id = (int) $data['id'];
+
+        $carne = Carne::findById($id);
+
+        if (!$carne) {
+            http_response_code(404);
+            echo json_encode(['error' => 'Carnê não encontrado']);
+            return;
+        }
+
+        // Gera as parcelas
+        $resultado = $carne->gerarParcelas();
+
+        // Retorna apenas as parcelas
+        echo json_encode(['parcelas' => $resultado['parcelas']]);
     }
 }
